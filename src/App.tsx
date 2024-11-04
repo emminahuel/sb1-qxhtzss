@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Menu, X, ArrowRight, ArrowDown, Facebook, Instagram, Linkedin } from 'lucide-react';
+import { Menu, X, ArrowRight, ArrowDown, Facebook, Instagram, Linkedin, MessageCircle } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import Logo from '@/components/Logo';
@@ -141,22 +141,24 @@ const Hero = () => {
 const Services = () => {
   const services = [
     {
-      title: "Social Media Ads",
-      description: "Llevamos tus productos a las personas correctas en el momento adecuado.",
-      platforms: ["Facebook", "Instagram", "TikTok", "Pinterest", "Bing"],
-      icon: "📱"
+      title: "E-commerce",
+      description: "Desarrollo y gestión de tiendas online en VTEX y Mercado Libre.",
+      icon: "🛒"
     },
     {
-      title: "Google Ads",
-      description: "Aparece cuando tus clientes te buscan y genera ventas inmediatas.",
-      platforms: ["Search", "Display", "Shopping", "Performance MAX"],
-      icon: "🎯"
+      title: "Marketing Digital",
+      description: "Google Ads, Meta Ads, Email Marketing, SEO/SEM.",
+      icon: "📈"
     },
     {
-      title: "Email Marketing",
-      description: "Mantén el contacto con tus clientes y genera ventas recurrentes.",
-      platforms: ["Automatizaciones", "Newsletters", "Fidelización"],
-      icon: "📧"
+      title: "Automatización",
+      description: "Chatbots y flujos automatizados con Zapier y Manychat.",
+      icon: "🤖"
+    },
+    {
+      title: "Analítica y Optimización",
+      description: "Google Analytics, Data Studio, optimización de conversiones.",
+      icon: "📊"
     }
   ];
 
@@ -172,7 +174,7 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8">
           {services.map((service, index) => (
             <Card key={index} className="p-8 hover:shadow-xl transition-all duration-300 group">
               <div className="text-4xl mb-6 transform group-hover:scale-110 transition-transform duration-300">
@@ -180,14 +182,6 @@ const Services = () => {
               </div>
               <h3 className="text-2xl font-bold text-gray-800 mb-4">{service.title}</h3>
               <p className="text-gray-600 mb-6">{service.description}</p>
-              <div className="space-y-2">
-                {service.platforms.map((platform, pIndex) => (
-                  <div key={pIndex} className="flex items-center text-gray-600">
-                    <div className="w-1.5 h-1.5 rounded-full bg-orange-500 mr-2"></div>
-                    {platform}
-                  </div>
-                ))}
-              </div>
             </Card>
           ))}
         </div>
@@ -196,28 +190,36 @@ const Services = () => {
   );
 };
 
-// Stats Section Component
-const Stats = () => {
+// About Us Section Component
+const AboutUs = () => {
   return (
-    <section className="py-20 bg-orange-50">
+    <section id="nosotros" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-4 gap-8 text-center">
-          {[
-            { number: "500+", label: "Clientes Satisfechos" },
-            { number: "95%", label: "Tasa de Retención" },
-            { number: "50M+", label: "Inversión Gestionada" },
-            { number: "3x", label: "ROI Promedio" },
-          ].map((stat, index) => (
-            <div key={index} className="group">
-              <div className="text-4xl font-bold text-orange-500 mb-2 group-hover:scale-110 transition-transform">
-                {stat.number}
-              </div>
-              <div className="text-gray-600">{stat.label}</div>
-            </div>
-          ))}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold text-gray-800 mb-4">
+            Sobre Nosotros
+          </h2>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            Con más de 10 años de experiencia en marketing digital y e-commerce, lideramos proyectos exitosos en Hunter Douglas y Publicis Media.
+          </p>
         </div>
       </div>
     </section>
+  );
+};
+
+
+// WhatsApp Floating Button Component
+const WhatsAppButton = () => {
+  return (
+    <a
+      href="https://wa.me/1234567890" // Replace with your WhatsApp number
+      className="fixed bottom-8 right-8 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-all"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <MessageCircle className="h-6 w-6" />
+    </a>
   );
 };
 
@@ -228,7 +230,8 @@ const App = () => {
       <Navbar />
       <Hero />
       <Services />
-      <Stats />
+      <AboutUs />
+      <WhatsAppButton />
     </div>
   );
 };
