@@ -76,7 +76,7 @@ const Navbar = () => {
                 <a href="#nosotros">Nosotros</a>
               </Button>
               <Button className="w-full justify-start" asChild>
-                <a href="#contacto">Contacto</a>
+                <a href="https://wa.me/+5491130011554">Contacto</a>
               </Button>
             </div>
           </div>
@@ -108,7 +108,7 @@ const Hero = () => {
               </a>
             </Button>
             <Button variant="outline" size="lg" asChild>
-              <a href="#contacto" className="gap-2">
+              <a href="https://wa.me/+5491130011554" className="gap-2">
                 Hablemos
                 <ArrowRight className="h-4 w-4" />
               </a>
@@ -117,21 +117,6 @@ const Hero = () => {
         </div>
       </div>
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-4">
-        <Button variant="ghost" size="icon" asChild>
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-            <Facebook className="h-5 w-5" />
-          </a>
-        </Button>
-        <Button variant="ghost" size="icon" asChild>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-            <Instagram className="h-5 w-5" />
-          </a>
-        </Button>
-        <Button variant="ghost" size="icon" asChild>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-            <Linkedin className="h-5 w-5" />
-          </a>
-        </Button>
       </div>
     </div>
   );
@@ -213,7 +198,7 @@ const AboutUs = () => {
 const WhatsAppButton = () => {
   return (
     <a
-      href="https://wa.me/1234567890" // Replace with your WhatsApp number
+      href="https://wa.me/+5491130011554" // Replace with your WhatsApp number
       className="fixed bottom-8 right-8 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-all"
       target="_blank"
       rel="noopener noreferrer"
